@@ -20,15 +20,14 @@
     NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     // Test BabyModel property monitor function
     VGModel *aModel = [[VGModel alloc] init];
     aModel.title = @"Bob";
     aModel.backgroundImage = [UIImage imageNamed:@"green_grace.png"];
-    self.testModel = aModel;
     
     __weak typeof(self) weakSelf = self;
     [self.testModel addObserver:self forProperty:@"title" withEvent:^(NSString * _Nonnull propertyName, NSDictionary * _Nonnull changes) {
@@ -42,19 +41,13 @@
         [weakSelf retainCycleTest];
     }];
     
+    self.testModel = aModel;
+    
     [self.testModel ceaseFireOnProperty:@"title"];
     self.testModel.title = @"Jack Hugo";
     [self.testModel resumeFireOnProperty:@"title"];
     
-    //    [aModel removeObserver:self forProperty:@"title"];
     self.testModel.title = @"TingTing";
-    
-    self.testModel = nil;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
