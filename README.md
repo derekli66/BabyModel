@@ -1,7 +1,7 @@
-# Description
+## Description
 BabyModel is a model class to help create model class easily. Normally, MVC pattern ask us to create a signal structure for Model-View-Controller that don't let Model-View have strong coupling. But, hooking up the signal structure through KVO is a little bit.... not so convenient. Therefore, that comes with this BabyModel for easy to use.
 
-# What We Have
+## What We Have
 ### OBModel
 OBModel is a basic class that help you create your own model subclass with desired properties.  
 
@@ -11,7 +11,7 @@ OBCollection subclassed from OBModel and provides collection changes monitoring.
 ### KVO Behind the Scene
 Yes. They are all backed up by KVO behind the scene. 
 
-# How to Use
+## How to Use
 ### Make a Subclass
 ```objc
 // Create your own model class
