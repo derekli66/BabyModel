@@ -189,6 +189,7 @@
 				TargetAttributes = {
 					65DDBCC21D0E8CD50086C7A5 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = SKLFZ4533Y;
 					};
 					65DDBCDB1D0E8CD50086C7A5 = {
 						CreatedOnToolsVersion = 7.3;
@@ -375,7 +376,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SKLFZ4533Y;
 				INFOPLIST_FILE = Main/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Pointers.BabyModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -386,7 +389,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SKLFZ4533Y;
 				INFOPLIST_FILE = Main/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Pointers.BabyModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";

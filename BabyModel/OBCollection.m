@@ -4,6 +4,9 @@
 //  Created by CHIEN-MING LEE on 6/13/16.
 //  Copyright © 2016 Derek. All rights reserved.
 //
+// The KVC and KVO setup for collection object refers to the following link
+// For KVO, https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueObserving/Articles/KVOCompliance.html#//apple_ref/doc/uid/20002178-SW1
+// For KVC, https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/DefiningCollectionMethods.html#//apple_ref/doc/uid/10000107i-CH17-SW1
 
 #import "OBCollection.h"
 #import "OBModel.h"
@@ -32,7 +35,7 @@
 
 - (NSArray *)collection
 {
-    return [NSArray arrayWithArray:self.container];
+    return [NSArray arrayWithArray:self.container]; 
 }
 
 - (void)insertObject:(id)object inCollectionAtIndex:(NSUInteger)index

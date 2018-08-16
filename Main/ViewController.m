@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "VGModel.h"
+#import "OBCollection.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) VGModel *testModel;
@@ -18,6 +19,13 @@
 - (void)retainCycleTest
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"collection"]) {
+        NSLog(@"Got collection changed. Changed item: %@", change);
+    }
 }
 
 - (void)viewDidLoad
@@ -48,6 +56,18 @@
     [self.testModel resumeFireOnProperty:@"title"];
     
     self.testModel.title = @"TingTing";
+  
+    // Testing custom collection object with KVO
+    OBCollection *collection = [[OBCollection alloc] init];
+    
+    [collection addObserver:self forKeyPath:@"collection" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
+    [collection addObject:@"String1"];
+    [collection addObject:@"String2"];
+    
+    for (NSString *str in collection) {
+        NSLog(@"String: %@", str);
+    }
 }
 
 @end
